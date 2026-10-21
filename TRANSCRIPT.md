@@ -7,7 +7,7 @@ summarized as one-liners.
 <!-- transcript-session: a45812f2-5125-4d86-b754-bf3574695a77 | 2026-10-21T19:35:27.098Z -->
 ## Session `a45812f2`, 2026-10-21 19:35:27
 
-*30 user turns. Tool outputs and reasoning omitted.*
+*31 user turns. Tool outputs and reasoning omitted.*
 
 **User:**
 lets do this activity
@@ -643,5 +643,48 @@ I would combine them by have TF-IDF prehaps be a filtration for what words the e
 - 🔧 `Bash`: Commit Part 5 with results, push, and check for template updates
 - 🔧 `Skill`: checkpoint
 - 🔧 `Bash`: Check that everything runs and list anything missing
+- 🔧 `Bash`: Refresh transcript, check for uncommitted work, get repo URL
+- 🔧 `Bash`: Push any remaining commits
+I wrote your last answer in. The slot now reads:
+
+> I would combine them by have TF-IDF prehaps be a filtration for what words the embedding search encodes
+
+```
+[main 5d65784] Part 5 done
+ 2 files changed, 31614 insertions(+), 4 deletions(-)
+ create mode 100644 results/embed.json
+To https://github.com/srogrady/comp440-retrieval.git
+   f3dcf5e..5d65784  main -> main
+```
+
+Part 5 is saved on GitHub. Next I checked what's left to hand in:
+
+```
+== The commands ==
+  search.py (a tiny TF-IDF search): ran, 0.8 s
+  top_terms.py (one movie): ran, 0.5 s
+
+== What is missing ==
+  Nothing.
+
+== Saved on GitHub ==
+  Everything is committed and pushed.
+
+0 things missing.
+Your work is pushed, so complete the Work Submission Form, https://forms.gle/mgKcnqzTGxNaGvteA, choose "Activity submission", and in its box write "Representing and Retrieving Knowledge" and your repository's GitHub URL.
+```
+
+```
+1 session(s) found; this session in TRANSCRIPT.md: yes.
+```
+
+The transcript script made its own `Update TRANSCRIPT.md` commit, and I pushed it.
+
+Now complete the [Work Submission Form](https://forms.gle/mgKcnqzTGxNaGvteA). Choose "Activity submission". In its box, write "Representing and Retrieving Knowledge" and your repository's GitHub URL: https://github.com/srogrady/comp440-retrieval
+
+Tell me once you've submitted the form.
+
+**User:**
+submitted
 
 <!-- end-session: a45812f2-5125-4d86-b754-bf3574695a77 -->
