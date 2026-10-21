@@ -7,7 +7,7 @@ summarized as one-liners.
 <!-- transcript-session: a45812f2-5125-4d86-b754-bf3574695a77 | 2026-10-21T19:35:27.098Z -->
 ## Session `a45812f2`, 2026-10-21 19:35:27
 
-*13 user turns. Tool outputs and reasoning omitted.*
+*18 user turns. Tool outputs and reasoning omitted.*
 
 **User:**
 lets do this activity
@@ -365,5 +365,96 @@ I wrote your three searches into `WRITEUP.md`, word for word. The slot now reads
 
 **User:**
 It go my first two movies correct (either teh first guess or the second) but my last movie wasn't on it's list. It was very good at getting settings correct. But it wasn't great when my answers were more vague which I had guessed earlier, or when my answers could make sense for a lot of movies.
+
+**Claude:**
+- 🔧 `Edit`: /Users/shayleeogrady/Documents/macalester/fall 2026/collective intell/comp440-retrieval/WRITEUP.md
+- 🔧 `Bash`: Commit Part 3, push, and check for template updates
+- 🔧 `Bash`: Run the question bank with TF-IDF
+I wrote your answer into `WRITEUP.md`. The slot now reads:
+
+> It go my first two movies correct (either teh first guess or the second) but my last movie wasn't on it's list. It was very good at getting settings correct. But it wasn't great when my answers were more vague which I had guessed earlier, or when my answers could make sense for a lot of movies.
+
+```
+Wrote TRANSCRIPT.md: 1 session(s).
+1 session(s) found; this session in TRANSCRIPT.md: yes.
+[main db26396] Part 3 done
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+To https://github.com/srogrady/comp440-retrieval.git
+   1f2e9de..db26396  main -> main
+```
+
+Part 3 is saved on GitHub. The template has no new commits. If you want the typos fixed, just say so.
+
+**Part 4: The question bank** (about 9 minutes). I ran all 518 questions with your TF-IDF settings:
+
+```
+TF-IDF, with your settings: REMOVE_STOP_WORDS = True, MIN_MOVIES = 2, REPEATS_COUNT_LESS = True.
+Ran 518 questions against 4,309 movies in under a second.
+
+TF-IDF put the right movie first for 18 of 100 written questions and in the top 10 for 31.
+  Of the 34 detail questions, it put 18 first and 31 in the top 10.
+  Of the 33 reworded questions, it put 0 first and 0 in the top 10.
+  Of the 33 vague questions, it put 0 first and 0 in the top 10.
+It put the right movie first for 21 of 418 real requests and in the top 10 for 68.
+
+Saved every question's top 10 in results/tfidf.json. To look through them: uv run python site.py
+```
+
+**Which kind of question did TF-IDF handle best, and which worst? By how much?** A sentence or two is enough.
+
+**User:**
+It handled a detailed question best getting 18 first and 31 in the top 10 of 100 questions. It handled reworded or vague question worst getting zero right for those at all.
+
+**Claude:**
+Before I write this in, one part doesn't match the output: "of 100 questions." Take another look at the detail line. What should that part say?
+
+**User:**
+It does a good job handling detailed questions as that was where it was able to correctly indetify 18 movies first
+
+**Claude:**
+Here's your new first sentence joined with your second sentence from before:
+
+> It does a good job handling detailed questions as that was where it was able to correctly indetify 18 movies first. It handled reworded or vague question worst getting zero right for those at all.
+
+Should I write it in like that?
+
+**User:**
+yes
+
+**Claude:**
+- 🔧 `Edit`: /Users/shayleeogrady/Documents/macalester/fall 2026/collective intell/comp440-retrieval/WRITEUP.md
+- 🔧 `Bash`: Show the README's Part 4 section
+- 🔧 `Bash`: Start the comparison site
+- 🔧 `Bash`: Find README Part 4 text and read the site's startup output
+I wrote it in. The slot now reads:
+
+> It does a good job handling detailed questions as that was where it was able to correctly indetify 18 movies first. It handled reworded or vague question worst getting zero right for those at all.
+
+One way this could mislead you: each kind has only 33 or 34 written questions, so a single question shifts a score by about 3 points.
+
+I started the comparison site:
+
+```
+The site is running at http://localhost:8765. Stop it with Ctrl-C.
+```
+
+It should have opened in your browser. If it didn't, use that address. The site shows one question at a time: the right movie, where TF-IDF ranked it, and TF-IDF's top 10, with the words each movie shares with the question. To see only the misses, pick "TF-IDF missed" in the Show menu. A miss is a question whose right movie isn't in the top 10.
+
+Look through some answers, especially the misses. Tell me when you've looked at a few.
+
+**User:**
+Ive looked
+
+**Claude:**
+Thanks for looking through them.
+
+**What do the misses you looked at have in common?** A sentence or two is enough. You can also mention a question's id (like w026) if you want me to bring it up.
+
+**User:**
+The misses seem to be situations where some words are placed as important for the movie when they really don't correlate to that movie, and lead the prediction astray
+
+**Claude:**
+- 🔧 `Edit`: /Users/shayleeogrady/Documents/macalester/fall 2026/collective intell/comp440-retrieval/WRITEUP.md
+- 🔧 `Bash`: Commit Part 4 with results, push, and check for template updates
 
 <!-- end-session: a45812f2-5125-4d86-b754-bf3574695a77 -->
