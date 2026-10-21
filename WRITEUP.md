@@ -20,7 +20,9 @@ Embedding search will tackle vague questions a lot better because it can gather 
 
 ### The settings you chose, and why
 
-XXXX
+- `REMOVE_STOP_WORDS = True`: because it drops a lot of common low value words.
+- `MIN_MOVIES = 2`: that will filter it a bit more, but it feels like that could over filter so I want to avoid that.
+- `REPEATS_COUNT_LESS = True`: that will help give words weight which is valueable.
 
 ## Part 2: Top terms
 
