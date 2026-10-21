@@ -34,11 +34,13 @@ They get the situations correct, and specific landmark items that are important 
 
 ### Your questions, as you typed them
 
-XXXX
+1. There is a young orphaned boy who is told that he is a wizard and needs to go to school to learn about his powers and his parents legacy. He is brough to the school where he makes other kind wizard friends and learns more about parts of himself that he always wondered about. He is offered guidance and support but is threatened by evil people.
+2. A very angry but funny man who happens to be very aggressive and have anger issues has to retire from his hockey career, but is taught by a kind golfer how to golf in hopes of winning money to pay off debts to save his mom from a bad retirement home. He falls in love with a reporter, and its all very funny but heartwarming.
+3. A young girl has grown up on an island with her family who are royality on the island and she loves it there, but she is tired of hearing stories and staying on land when it is really the water and sailing that calls to her. She decides to make a change when she finds out that her island and all the islands are dying!
 
 ### Did the movies you meant come up? What did TF-IDF get right and wrong?
 
-XXXX
+It go my first two movies correct (either teh first guess or the second) but my last movie wasn't on it's list. It was very good at getting settings correct. But it wasn't great when my answers were more vague which I had guessed earlier, or when my answers could make sense for a lot of movies.
 
 ## Part 4: The question bank
 
