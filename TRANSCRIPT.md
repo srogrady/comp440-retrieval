@@ -7,7 +7,7 @@ summarized as one-liners.
 <!-- transcript-session: a45812f2-5125-4d86-b754-bf3574695a77 | 2026-10-21T19:35:27.098Z -->
 ## Session `a45812f2`, 2026-10-21 19:35:27
 
-*7 user turns. Tool outputs and reasoning omitted.*
+*9 user turns. Tool outputs and reasoning omitted.*
 
 **User:**
 lets do this activity
@@ -153,5 +153,100 @@ I want to say True to remove_stop_words because it drops a lot of common low val
 - 🔧 `Bash`: Set the three TF-IDF settings to the chosen values
 - 🔧 `Edit`: /Users/shayleeogrady/Documents/macalester/fall 2026/collective intell/comp440-retrieval/WRITEUP.md
 - 🔧 `Bash`: Commit Part 1, push, and check for template updates
+I set the three values in `tfidf_settings.py`. The file now has:
+
+```
+REMOVE_STOP_WORDS = True
+MIN_MOVIES = 2
+REPEATS_COUNT_LESS = True
+```
+
+I wrote your reasons into `WRITEUP.md`. The slot now reads:
+
+> - `REMOVE_STOP_WORDS = True`: because it drops a lot of common low value words.
+> - `MIN_MOVIES = 2`: that will filter it a bit more, but it feels like that could over filter so I want to avoid that.
+> - `REPEATS_COUNT_LESS = True`: that will help give words weight which is valueable.
+
+```
+Wrote TRANSCRIPT.md: 1 session(s).
+1 session(s) found; this session in TRANSCRIPT.md: yes.
+[main 283ee1c] Part 1 done
+ 2 files changed, 6 insertions(+), 4 deletions(-)
+To https://github.com/srogrady/comp440-retrieval.git
+   8b6a595..283ee1c  main -> main
+```
+
+Part 1 is saved on GitHub. The template has no new commits.
+
+**Part 2: Top terms** (about 6 minutes). The packages are installed, so we can start.
+
+Which two movies do you know well? The movies you rated in HW1 are in the collection.
+
+**User:**
+Tangled a disney movie and then also The maze runner movie
+
+**Claude:**
+- 🔧 `Bash`: Show top TF-IDF terms for Tangled
+- 🔧 `Bash`: Show top TF-IDF terms for The Maze Runner
+Here are the top terms for your two movies.
+
+```
+Tangled (2010): the 15 words with the highest TF-IDF weight in its plot summary.
+
+     word               weight  count here  movies
+  1. tower               0.324           3       6
+  2. flynn               0.273           2       4
+  3. escapade            0.172           1       2
+  4. chameleon           0.172           1       2
+  5. gruff               0.172           1       2
+  6. protective          0.166           1       3
+  7. captor              0.161           1       4
+  8. 70                  0.161           1       4
+  9. pub                 0.158           1       5
+ 10. feisty              0.158           1       5
+ 11. hides               0.154           1       6
+ 12. bandit              0.154           1       6
+ 13. rider               0.154           1       6
+ 14. horse               0.154           1       6
+ 15. curious             0.152           1       7
+
+count here: how many times the word is in this plot summary. movies: how many of the 4,309 plot summaries have it.
+
+The plot summary: When the kingdom's most wanted-and most charming-bandit Flynn Rider hides out in a mysterious tower, he's taken hostage by Rapunzel, a beautiful and feisty tower-bound teen with 70 feet of magical, golden hair. Flynn's curious captor, who's looking for her ticket out of the tower where she's been locked away for years, strikes a deal with the handsome thief and the unlikely duo sets off on an action-packed escapade, complete with a super-cop horse, an over-protective chameleon and a gruff gang of pub thugs.
+
+Your settings: REMOVE_STOP_WORDS = True, MIN_MOVIES = 2, REPEATS_COUNT_LESS = True.
+```
+
+```
+Maze Runner, The (2014): the 15 words with the highest TF-IDF weight in its plot summary.
+
+     word               weight  count here  movies
+  1. require             0.296           1       3
+  2. erased              0.296           1       3
+  3. runners             0.287           1       4
+  4. maze                0.275           1       6
+  5. thomas              0.240           1      17
+  6. apocalyptic         0.236           1      19
+  7. learning            0.229           1      23
+  8. memory              0.225           1      26
+  9. post                0.221           1      29
+ 10. shot                0.220           1      30
+ 11. trapped             0.212           1      37
+ 12. boys                0.212           1      37
+ 13. join                0.207           1      43
+ 14. community           0.203           1      48
+ 15. fellow              0.201           1      51
+
+count here: how many times the word is in this plot summary. movies: how many of the 4,309 plot summaries have it.
+
+The plot summary: Set in a post-apocalyptic world, young Thomas is deposited in a community of boys after his memory is erased, soon learning they're all trapped in a maze that will require him to join forces with fellow “runners” for a shot at escape.
+
+Your settings: REMOVE_STOP_WORDS = True, MIN_MOVIES = 2, REPEATS_COUNT_LESS = True.
+```
+
+**For each movie, what do the top terms get right, and what do they get wrong, about what makes it distinctive?** A sentence or two is enough.
+
+**User:**
+They get the situations correct, and specific landmark items that are important to the setting, but they don't explain much about characters and barely have any words about how the movie feels or movie vibes.
 
 <!-- end-session: a45812f2-5125-4d86-b754-bf3574695a77 -->
