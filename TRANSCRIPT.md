@@ -7,7 +7,7 @@ summarized as one-liners.
 <!-- transcript-session: a45812f2-5125-4d86-b754-bf3574695a77 | 2026-10-21T19:35:27.098Z -->
 ## Session `a45812f2`, 2026-10-21 19:35:27
 
-*9 user turns. Tool outputs and reasoning omitted.*
+*13 user turns. Tool outputs and reasoning omitted.*
 
 **User:**
 lets do this activity
@@ -248,5 +248,122 @@ Your settings: REMOVE_STOP_WORDS = True, MIN_MOVIES = 2, REPEATS_COUNT_LESS = Tr
 
 **User:**
 They get the situations correct, and specific landmark items that are important to the setting, but they don't explain much about characters and barely have any words about how the movie feels or movie vibes.
+
+**Claude:**
+- 🔧 `Edit`: /Users/shayleeogrady/Documents/macalester/fall 2026/collective intell/comp440-retrieval/WRITEUP.md
+- 🔧 `Bash`: Commit Part 2, push, and check for template updates
+I wrote your answer into `WRITEUP.md`. The slot now reads:
+
+> ### Your movies: what do the top terms get right and wrong about what makes each one distinctive?
+>
+> They get the situations correct, and specific landmark items that are important to the setting, but they don't explain much about characters and barely have any words about how the movie feels or movie vibes.
+
+```
+Wrote TRANSCRIPT.md: 1 session(s).
+1 session(s) found; this session in TRANSCRIPT.md: yes.
+[main 1f2e9de] Part 2 done
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+To https://github.com/srogrady/comp440-retrieval.git
+   283ee1c..1f2e9de  main -> main
+```
+
+Part 2 is saved on GitHub. The template has no new commits.
+
+**Part 3: Your own searches** (about 7 minutes). You'll run three searches of your own.
+
+What's your first search? For example, describe a movie you know in your own words, without its title. I'll run it exactly as you type it.
+
+**User:**
+There is a young orphaned boy who is told that he is a wizard and needs to go to school to learn about his powers and his parents legacy. He is brough to the school where he makes other kind wizard friends and learns more about parts of himself that he always wondered about. He is offered guidance and support but is threatened by evil people.
+
+**Claude:**
+- 🔧 `Bash`: Run TF-IDF search for the first question
+Here's what TF-IDF returned for your first search:
+
+```
+Question: There is a young orphaned boy who is told that he is a wizard and needs to go to school to learn about his powers ...
+
+TF-IDF, top 10:
+   1. 0.209  Harry Potter and the Sorcerer's Stone (a.k.a. Harry Potter and the Philosopher's Stone) (2001)   matched: wizard, school, learns, powers, parents
+   2. 0.167  7th Voyage of Sinbad, The (1958)   matched: wizard, evil
+   3. 0.162  Wizard of Oz, The (1939)   matched: wizard, makes, friends, young
+   4. 0.144  Easy A (2010)   matched: school, guidance, support, parents
+   5. 0.137  The Dragon Ring (1994)   matched: parts, needs, powers
+   6. 0.135  Vantage Point (2008)   matched: told
+   7. 0.131  Howl's Moving Castle (Hauru no ugoku shiro) (2004)   matched: wizard, young
+   8. 0.129  Kid in King Arthur's Court, A (1995)   matched: wizard, needs, learns, evil
+   9. 0.128  Saw V (2008)   matched: legacy, threatened
+  10. 0.126  Man of Steel (2013)   matched: powers, learns, boy, young
+      Ignored as stop words: there, is, who, that, he, and, to, go, about, his, the, where, other, more, of and 4 more.
+      Not in the vocabulary (in fewer than 2 summaries, or none): brough, wondered.
+```
+
+In each line, the number is the movie's score, and `matched` lists the words from your question that appear in that movie's plot summary.
+
+What's your second search?
+
+**User:**
+A very angry but funny man who happens to be very aggressive and have anger issues has to retire from his hockey career, but is taught by a kind golfer how to golf in hopes of winning money to pay off debts to save his mom from a bad retirement home. He falls in love with a reporter, and its all very funny but heartwarming.
+
+**Claude:**
+- 🔧 `Bash`: Run TF-IDF search for the second question
+Here's what TF-IDF returned for your second search:
+
+```
+Question: A very angry but funny man who happens to be very aggressive and have anger issues has to retire from his hockey career, but is ...
+
+TF-IDF, top 10:
+   1. 0.146  Tommy Boy (1995)   matched: funny, save
+   2. 0.125  Happy Gilmore (1996)   matched: golf, hockey, money, save
+   3. 0.125  Playing by Heart (1998)   matched: funny, love
+   4. 0.117  Score, The (2001)   matched: retire, hopes
+   5. 0.115  Fireworks (Hana-bi) (1997)   matched: debts, pay, home
+   6. 0.106  Cutting Edge, The (1992)   matched: hockey, hopes
+   7. 0.104  Pledge, The (2001)   matched: retire
+   8. 0.102  Muriel's Wedding (1994)   matched: hopes, money, love
+   9. 0.098  I Heart Huckabees (2004)   matched: issues, kind
+  10. 0.098  Coldblooded (1995)   matched: retirement, falls, home, love
+      Ignored as stop words: very, but, who, to, be, and, have, has, from, his, is, by, how, in, of and 5 more.
+      Not in the vocabulary (in fewer than 2 summaries, or none): golfer, heartwarming.
+```
+
+What's your third search?
+
+**User:**
+A young girl has grown up on an island with her family who are royality on the island and she loves it there, but she is tired of hearing stories and staying on land when it is really the water and sailing that calls to her. She decides to make a change when she finds out that her island and all the islands are dying!
+
+**Claude:**
+- 🔧 `Bash`: Run TF-IDF search for the third question
+- 🔧 `Edit`: /Users/shayleeogrady/Documents/macalester/fall 2026/collective intell/comp440-retrieval/WRITEUP.md
+Here's what TF-IDF returned for your third search:
+
+```
+Question: A young girl has grown up on an island with her family who are royality on the island and she loves it there, but she ...
+
+TF-IDF, top 10:
+   1. 0.189  Wicker Man, The (2006)   matched: island, girl, young
+   2. 0.134  Manon of the Spring (Manon des sources) (1986)   matched: grown, land, young
+   3. 0.130  Eureka (1983)   matched: island, family
+   4. 0.120  Miss Peregrine's Home for Peculiar Children (2016)   matched: island, finds
+   5. 0.120  Black Sabbath (1963)   matched: calls, water, family
+   6. 0.119  Despicable Me (2010)   matched: staying, land
+   7. 0.119  The Butterfly Effect (2004)   matched: change, finds, young
+   8. 0.117  Moonrise Kingdom (2012)   matched: island, make
+   9. 0.116  Modesty Blaise (1966)   matched: island, calls, change
+  10. 0.115  Fistful of Flies (1997)   matched: grown, family, girl, make, finds, young
+      Ignored as stop words: has, up, on, an, with, her, who, are, the, and, she, it, there, but, is and 6 more.
+      Not in the vocabulary (in fewer than 2 summaries, or none): royality, islands.
+```
+
+I wrote your three searches into `WRITEUP.md`, word for word. The slot now reads:
+
+> 1. There is a young orphaned boy who is told that he is a wizard and needs to go to school to learn about his powers and his parents legacy. He is brough to the school where he makes other kind wizard friends and learns more about parts of himself that he always wondered about. He is offered guidance and support but is threatened by evil people.
+> 2. A very angry but funny man who happens to be very aggressive and have anger issues has to retire from his hockey career, but is taught by a kind golfer how to golf in hopes of winning money to pay off debts to save his mom from a bad retirement home. He falls in love with a reporter, and its all very funny but heartwarming.
+> 3. A young girl has grown up on an island with her family who are royality on the island and she loves it there, but she is tired of hearing stories and staying on land when it is really the water and sailing that calls to her. She decides to make a change when she finds out that her island and all the islands are dying!
+
+**Did the movies you meant come up? What did TF-IDF get right, and what did it get wrong?** A sentence or two is enough.
+
+**User:**
+It go my first two movies correct (either teh first guess or the second) but my last movie wasn't on it's list. It was very good at getting settings correct. But it wasn't great when my answers were more vague which I had guessed earlier, or when my answers could make sense for a lot of movies.
 
 <!-- end-session: a45812f2-5125-4d86-b754-bf3574695a77 -->
