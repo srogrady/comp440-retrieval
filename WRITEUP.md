@@ -10,11 +10,11 @@ Part 0 predictions stay as you first wrote them; Part 5 asks what you would chan
 
 ### Questions that name a character, place or thing: which method will do better, and why?
 
-XXXX
+The TF-IDF method will do better on this search, because the question has specific key words that matter a lot to the movie
 
 ### Vague descriptions: which method will do better, and why?
 
-XXXX
+Embedding search will tackle vague questions a lot better because it can gather some valueable information from very little
 
 ## Part 1: Build the TF-IDF model
 
