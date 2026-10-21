@@ -7,7 +7,7 @@ summarized as one-liners.
 <!-- transcript-session: a45812f2-5125-4d86-b754-bf3574695a77 | 2026-10-21T19:35:27.098Z -->
 ## Session `a45812f2`, 2026-10-21 19:35:27
 
-*5 user turns. Tool outputs and reasoning omitted.*
+*7 user turns. Tool outputs and reasoning omitted.*
 
 **User:**
 lets do this activity
@@ -90,5 +90,68 @@ Second prediction: **for vague descriptions, which method will do better, and wh
 
 **User:**
 Embedding search will tackle vague questions a lot better because it can gather some valueable information from very little
+
+**Claude:**
+- 🔧 `Edit`: /Users/shayleeogrady/Documents/macalester/fall 2026/collective intell/comp440-retrieval/WRITEUP.md
+- 🔧 `Bash`: Refresh transcript, commit Part 0, and push
+- 🔧 `Read`: /Users/shayleeogrady/Documents/macalester/fall 2026/collective intell/comp440-retrieval/tfidf_set...
+I wrote your second prediction in. The slot now reads:
+
+> ### Vague descriptions: which method will do better, and why?
+>
+> Embedding search will tackle vague questions a lot better because it can gather some valueable information from very little
+
+```
+Wrote TRANSCRIPT.md: 1 session(s).
+1 session(s) found; this session in TRANSCRIPT.md: yes.
+[main 8b6a595] Part 0 done
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+To https://github.com/srogrady/comp440-retrieval.git
+   8ddbec7..8b6a595  main -> main
+```
+
+Setup is done, and your predictions are saved on GitHub.
+
+**Part 1: Build the TF-IDF model** (about 6 minutes). Whatever you don't finish today is due 8:00am Thursday, October 22, and Part 5 is fine to do at home.
+
+`tfidf_settings.py` has three settings. Words are always lowercased first, so "Dog" and "dog" count as one word.
+
+1. **`REMOVE_STOP_WORDS`**: `True` or `False`. Now `False`.
+   - With `True`, about 300 common words are dropped before scoring. For example, "the man in the boat" becomes "man boat."
+   - The list comes from scikit-learn, and it covers more than "the" and "of." It also drops words like "bill", "fire", "name" and "system", plus the number words "one" to "twelve" (except "seven").
+2. **`MIN_MOVIES`**: a whole number, 1 or more. Now `1`.
+   - A word is kept only if it appears in at least this many plot summaries. With 3, a word found in just two summaries is dropped.
+   - 1 is the only value that keeps a word that appears in a single summary.
+3. **`REPEATS_COUNT_LESS`**: `True` or `False`. Now `False`.
+   - With `True`, a word that repeats in one summary counts as 1 + log(count) instead of its full count. So "shark" appearing 4 times counts about 2.4, not 4.
+
+What are your three choices, each with a reason? Keeping the current value is a choice too, and it needs a reason like the others.
+
+**User:**
+<task-notification>
+<task-id>bdgeg0wxd</task-id>
+<tool-use-id>toolu_017VdTErAf5qghv3gajzx43o</tool-use-id>
+<output-file>/private/tmp/claude-501/-Users-shayleeogrady-Documents-macalester-fall-2026-collective-intell-comp440-retrieval/a45812f2-5125-4d86-b754-bf3574695a77/tasks/bdgeg0wxd.output</output-file>
+<status>completed</status>
+<summary>Background command "Install packages and download the embedding model" completed (exit code 0)</summary>
+</task-notification>
+
+**Claude:**
+- 🔧 `Bash`: Show the end of the setup job's output
+The background setup job finished:
+
+```
+The embedding model is ready: it matches the shipped vectors for 5 test movies.
+```
+
+The packages are installed, and the embedding model is downloaded and checked.
+
+**User:**
+I want to say True to remove_stop_words because it drops a lot of common low value words. I want Min_movies to be 2 instead of 1 as that will filter it a bit more, but it feels like that could over filter so I want to avoid that. Repeats should be true as that will help give words weight which is valueable.
+
+**Claude:**
+- 🔧 `Bash`: Set the three TF-IDF settings to the chosen values
+- 🔧 `Edit`: /Users/shayleeogrady/Documents/macalester/fall 2026/collective intell/comp440-retrieval/WRITEUP.md
+- 🔧 `Bash`: Commit Part 1, push, and check for template updates
 
 <!-- end-session: a45812f2-5125-4d86-b754-bf3574695a77 -->
