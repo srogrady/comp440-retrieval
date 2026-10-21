@@ -638,4 +638,10 @@ Last question: **How might you combine the two methods?** A sentence or two is e
 **User:**
 I would combine them by have TF-IDF prehaps be a filtration for what words the embedding search encodes
 
+**Claude:**
+- 🔧 `Edit`: /Users/shayleeogrady/Documents/macalester/fall 2026/collective intell/comp440-retrieval/WRITEUP.md
+- 🔧 `Bash`: Commit Part 5 with results, push, and check for template updates
+- 🔧 `Skill`: checkpoint
+- 🔧 `Bash`: Check that everything runs and list anything missing
+
 <!-- end-session: a45812f2-5125-4d86-b754-bf3574695a77 -->
