@@ -46,11 +46,11 @@ It go my first two movies correct (either teh first guess or the second) but my 
 
 ### Which kind of question did TF-IDF handle best, and which worst? By how much?
 
-XXXX
+It does a good job handling detailed questions as that was where it was able to correctly indetify 18 movies first. It handled reworded or vague question worst getting zero right for those at all.
 
 ### The misses you looked at: what do they have in common?
 
-XXXX
+The misses seem to be situations where some words are placed as important for the movie when they really don't correlate to that movie, and lead the prediction astray
 
 ## Part 5: Embeddings
 
