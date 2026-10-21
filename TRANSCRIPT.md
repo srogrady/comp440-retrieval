@@ -7,7 +7,7 @@ summarized as one-liners.
 <!-- transcript-session: a45812f2-5125-4d86-b754-bf3574695a77 | 2026-10-21T19:35:27.098Z -->
 ## Session `a45812f2`, 2026-10-21 19:35:27
 
-*18 user turns. Tool outputs and reasoning omitted.*
+*30 user turns. Tool outputs and reasoning omitted.*
 
 **User:**
 lets do this activity
@@ -456,5 +456,186 @@ The misses seem to be situations where some words are placed as important for th
 **Claude:**
 - 🔧 `Edit`: /Users/shayleeogrady/Documents/macalester/fall 2026/collective intell/comp440-retrieval/WRITEUP.md
 - 🔧 `Bash`: Commit Part 4 with results, push, and check for template updates
+- 🔧 `Bash`: Run the question bank with embeddings
+I wrote your answer in. The slot now reads:
+
+> The misses seem to be situations where some words are placed as important for the movie when they really don't correlate to that movie, and lead the prediction astray
+
+One way this could mislead you: you picked a handful of the misses yourself, so they may not look like the rest.
+
+```
+Wrote TRANSCRIPT.md: 1 session(s).
+1 session(s) found; this session in TRANSCRIPT.md: yes.
+[main f3dcf5e] Part 4 done
+ 2 files changed, 56761 insertions(+), 2 deletions(-)
+ create mode 100644 results/tfidf.json
+To https://github.com/srogrady/comp440-retrieval.git
+   db26396..f3dcf5e  main -> main
+```
+
+Part 4 is saved on GitHub. The template has no new commits.
+
+**Part 5: Embeddings** (about 12 minutes). The model finished downloading during setup. I've started running the question bank with embeddings, which takes a minute or so.
+
+On October 1 you saw GloVe, which gives each word a list of numbers. Words used in similar contexts get similar lists, so "boat" lands near "ship." A sentence model does the same for a whole sentence or plot summary. It produces one list of numbers for the whole text. Two texts that mean similar things get lists that are close together, even when they share no words. Embedding search turns your question into a list like this and ranks the plot summaries whose lists are closest.
+
+Ask me anything about that. When you're ready: **What is a sentence embedding, in your own words?** Use one of your own Part 3 questions or movies as the example. A sentence or two is enough.
+
+**User:**
+<task-notification>
+<task-id>bc26m3rmy</task-id>
+<tool-use-id>toolu_01AmBdZEdacRDmUcTbCxmExw</tool-use-id>
+<output-file>/private/tmp/claude-501/-Users-shayleeogrady-Documents-macalester-fall-2026-collective-intell-comp440-retrieval/a45812f2-5125-4d86-b754-bf3574695a77/tasks/bc26m3rmy.output</output-file>
+<status>completed</status>
+<summary>Background command "Run the question bank with embeddings" completed (exit code 0)</summary>
+</task-notification>
+
+**Claude:**
+- 🔧 `Bash`: Show the last line of the embedding run
+- 🔧 `Bash`: Show the last line the embedding run printed
+The embedding run finished. Its last line:
+
+```
+Saved every question's top 10 in results/embed.json. To look through them: uv run python site.py
+```
+
+I'll show you its scores after you've answered the embedding question.
+
+**User:**
+Sentence embedding in my words is the process of turning a word into a numerical list that holds meaning so that similar lists mean similar words.
+
+**Claude:**
+The question also asks for an example. Which of your Part 3 questions or movies would you use, and how would it work for that one? A sentence is enough. Then I'll write in your full answer.
+
+**User:**
+help me i forget what I did in part 3
+
+**Claude:**
+Here are your three Part 3 searches. I've quoted the first sentence of each:
+
+1. "There is a young orphaned boy who is told that he is a wizard and needs to go to school to learn about his powers and his parents legacy." You meant Harry Potter.
+2. "A very angry but funny man who happens to be very aggressive and have anger issues has to retire from his hockey career, but is taught by a kind golfer how to golf in hopes of winning money to pay off debts to save his mom from a bad retirement home." You meant Happy Gilmore.
+3. "A young girl has grown up on an island with her family who are royality on the island and she loves it there, but she is tired of hearing stories and staying on land when it is really the water and sailing that calls to her." TF-IDF didn't find the movie you meant.
+
+Your movies in Part 2 were Tangled and The Maze Runner.
+
+Which one would you use as your example, and how would a sentence embedding work for it?
+
+**User:**
+For example in Tangled 70 and tower may have similar lists because 70 is describing the tower so they are closely related
+
+**Claude:**
+Before I join this with your first sentence, two things to check.
+
+- In the Tangled summary, "70" comes in "70 feet of magical, golden hair."
+- A sentence embedding gives one list for the whole text. For Tangled, that's one list for the whole plot summary, not a list for each word.
+
+Do you want to keep your answer as it is, or change it? Either is fine, since it's your answer.
+
+**User:**
+no lets chnage it what are the words in tangled desripton
+
+**Claude:**
+Here's the Tangled plot summary, as `top_terms.py` printed it:
+
+```
+The plot summary: When the kingdom's most wanted-and most charming-bandit Flynn Rider hides out in a mysterious tower, he's taken hostage by Rapunzel, a beautiful and feisty tower-bound teen with 70 feet of magical, golden hair. Flynn's curious captor, who's looking for her ticket out of the tower where she's been locked away for years, strikes a deal with the handsome thief and the unlikely duo sets off on an action-packed escapade, complete with a super-cop horse, an over-protective chameleon and a gruff gang of pub thugs.
+```
+
+A sentence embedding would turn this whole paragraph into one list of numbers.
+
+How would you now say what a sentence embedding is, with Tangled as your example? A sentence or two is enough.
+
+**User:**
+for tangled the words Flynn and theif would have similar lists as they are very closely related
+
+**Claude:**
+Here's your first sentence joined with your new example:
+
+> Sentence embedding in my words is the process of turning a word into a numerical list that holds meaning so that similar lists mean similar words. For tangled the words Flynn and theif would have similar lists as they are very closely related.
+
+Should I write it in like that?
+
+**User:**
+yes
+
+**Claude:**
+- 🔧 `Edit`: /Users/shayleeogrady/Documents/macalester/fall 2026/collective intell/comp440-retrieval/WRITEUP.md
+- 🔧 `Bash`: Show the embedding run output and check the site is up
+I wrote it in. The slot now reads:
+
+> Sentence embedding in my words is the process of turning a word into a numerical list that holds meaning so that similar lists mean similar words. For tangled the words Flynn and theif would have similar lists as they are very closely related.
+
+Here's the embedding run's output in full:
+
+```
+Embedding 518 questions. This can take a minute.
+Ran 518 questions against 4,309 movies in 5 seconds.
+
+Embeddings put the right movie first for 31 of 100 written questions and in the top 10 for 59.
+  Of the 34 detail questions, they put 24 first and 31 in the top 10.
+  Of the 33 reworded questions, they put 4 first and 18 in the top 10.
+  Of the 33 vague questions, they put 3 first and 10 in the top 10.
+They put the right movie first for 32 of 418 real requests and in the top 10 for 81.
+
+The embedding model reads only about the first 200 words of a question, so it ignored the end of 62 of the 418 real requests.
+
+Saved every question's top 10 in results/embed.json. To look through them: uv run python site.py
+```
+
+Reload http://localhost:8765. It now shows both methods. The Show menu has three new choices, "TF-IDF did better", "Embeddings did better" and "Both missed", each with its count.
+
+Look at one question from "TF-IDF did better" and one from "Embeddings did better", whichever you like. Tell me when you have.
+
+I can also rerun your three Part 3 searches with both methods, if you'd like.
+
+**User:**
+okay
+
+**Claude:**
+Just to check: does "okay" mean you've looked at one question from each list, or that you'd like me to rerun your Part 3 searches with both methods?
+
+**User:**
+ive looked at the questions
+
+**Claude:**
+Thanks for looking at those.
+
+**Where does each method do better, and why?** A sentence or two is enough.
+
+**User:**
+the TF-IDF did better with specific recongizable names in movies, but embedding did better with not being lead astray by distinctive words that were incorrect. Embedding also did better more often.
+
+**Claude:**
+- 🔧 `Edit`: /Users/shayleeogrady/Documents/macalester/fall 2026/collective intell/comp440-retrieval/WRITEUP.md
+I wrote it in. The slot now reads:
+
+> the TF-IDF did better with specific recongizable names in movies, but embedding did better with not being lead astray by distinctive words that were incorrect. Embedding also did better more often.
+
+One way this could mislead you: you looked at one question from each list, so one example may not stand for the whole list.
+
+Here are your Part 0 predictions, word for word:
+
+> **Questions that name a character, place or thing:** The TF-IDF method will do better on this search, because the question has specific key words that matter a lot to the movie
+>
+> **Vague descriptions:** Embedding search will tackle vague questions a lot better because it can gather some valueable information from very little
+
+**Which prediction held, and which would you now change? Why?** A sentence or two is enough.
+
+**User:**
+Both my predictions hold I agree with those statements still and think that they were pretty much correct based on what I have seen.
+
+**Claude:**
+- 🔧 `Edit`: /Users/shayleeogrady/Documents/macalester/fall 2026/collective intell/comp440-retrieval/WRITEUP.md
+I wrote it in. The slot now reads:
+
+> Both my predictions hold I agree with those statements still and think that they were pretty much correct based on what I have seen.
+
+One score line goes the other way from your first prediction. On detail questions, embeddings put 24 first and TF-IDF put 18 first.
+
+Last question: **How might you combine the two methods?** A sentence or two is enough.
+
+**User:**
+I would combine them by have TF-IDF prehaps be a filtration for what words the embedding search encodes
 
 <!-- end-session: a45812f2-5125-4d86-b754-bf3574695a77 -->
