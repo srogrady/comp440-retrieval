@@ -28,7 +28,7 @@ Embedding search will tackle vague questions a lot better because it can gather 
 
 ### Your movies: what do the top terms get right and wrong about what makes each one distinctive?
 
-XXXX
+They get the situations correct, and specific landmark items that are important to the setting, but they don't explain much about characters and barely have any words about how the movie feels or movie vibes.
 
 ## Part 3: Your own searches
 
