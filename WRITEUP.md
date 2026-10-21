@@ -56,16 +56,16 @@ The misses seem to be situations where some words are placed as important for th
 
 ### What is a sentence embedding, in your own words?
 
-XXXX
+Sentence embedding in my words is the process of turning a word into a numerical list that holds meaning so that similar lists mean similar words. For tangled the words Flynn and theif would have similar lists as they are very closely related.
 
 ### Where does each method do better, and why?
 
-XXXX
+the TF-IDF did better with specific recongizable names in movies, but embedding did better with not being lead astray by distinctive words that were incorrect. Embedding also did better more often.
 
 ### Your Part 0 predictions: which held, and which would you change?
 
-XXXX
+Both my predictions hold I agree with those statements still and think that they were pretty much correct based on what I have seen.
 
 ### How might you combine the two methods?
 
-XXXX
+I would combine them by have TF-IDF prehaps be a filtration for what words the embedding search encodes
