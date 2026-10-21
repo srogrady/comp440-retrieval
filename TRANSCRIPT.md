@@ -7,7 +7,7 @@ summarized as one-liners.
 <!-- transcript-session: a45812f2-5125-4d86-b754-bf3574695a77 | 2026-10-21T19:35:27.098Z -->
 ## Session `a45812f2`, 2026-10-21 19:35:27
 
-*2 user turns. Tool outputs and reasoning omitted.*
+*5 user turns. Tool outputs and reasoning omitted.*
 
 **User:**
 lets do this activity
@@ -48,5 +48,47 @@ What name should I put at the top of `WRITEUP.md`?
 
 **User:**
 Shaylee 10/21/2026
+
+**Claude:**
+- 🔧 `Edit`: /Users/shayleeogrady/Documents/macalester/fall 2026/collective intell/comp440-retrieval/WRITEUP.md
+- 🔧 `Bash`: Refresh transcript and commit name and date
+I put your name and the date at the top of `WRITEUP.md` and committed them:
+
+```
+Wrote TRANSCRIPT.md: 1 session(s).
+1 session(s) found; this session in TRANSCRIPT.md: yes.
+[main 7ca02dc] Name and date
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+```
+
+**Part 0: Predictions** (about 10 minutes, or 5 if you did Step 1 before class)
+
+There are two methods. Keyword search (TF-IDF) scores a movie by the words its plot summary shares with your question. Embedding search turns your question and each plot summary into a list of numbers. Then it ranks the movies whose numbers are closest to your question's.
+
+First prediction: **for questions that name a character, place or thing, which method will do better, and why?** A guess is fine, and a sentence or two is enough.
+
+**User:**
+the first one
+
+**Claude:**
+By "the first one," I'll take it you mean keyword search (TF-IDF). I'll write your answer in once you add a reason.
+
+Why do you think TF-IDF will do better on questions that name a character, place or thing? A sentence is enough.
+
+**User:**
+The TF-IDF method will do better on this search, because the question has specific key words that matter a lot to the movie
+
+**Claude:**
+- 🔧 `Edit`: /Users/shayleeogrady/Documents/macalester/fall 2026/collective intell/comp440-retrieval/WRITEUP.md
+I wrote your first prediction into `WRITEUP.md`. The slot now reads:
+
+> ### Questions that name a character, place or thing: which method will do better, and why?
+>
+> The TF-IDF method will do better on this search, because the question has specific key words that matter a lot to the movie
+
+Second prediction: **for vague descriptions, which method will do better, and why?** A guess with a reason is enough.
+
+**User:**
+Embedding search will tackle vague questions a lot better because it can gather some valueable information from very little
 
 <!-- end-session: a45812f2-5125-4d86-b754-bf3574695a77 -->
